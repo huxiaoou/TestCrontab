@@ -3,13 +3,16 @@
 ## 上传
 
 ```powershell
-scp cron_3.0pl1-136ubuntu1_amd64.deb YOUR_HOST:/root/workspace/因子研究/TestCrontab
+scp -r /path/to/Project/TestCrontab YOUR_HOST:/root/workspace/因子研究/
 ```
 
 ## 安装
 
 ```bash
 cd /root/workspace/因子研究/TestCrontab
+```
+
+```bash
 dpkg -i cron_3.0pl1-136ubuntu1_amd64.deb
 ```
 
@@ -25,12 +28,6 @@ service cron status
 service cron start
 ```
 
-## 设置开机运行
-
-```bash
-systemctl enable cron
-```
-
 ## 定时任务案例
 
 ```bash
@@ -43,6 +40,20 @@ crontab -e
 ```vim
 * * * * *  /root/workspace/因子研究/TestCrontab/main.sh
 ```
+
+建议以此案例来测试`crontab`. 测试时使用
+
+```bash
+chmod +x main.sh
+```
+
+来赋予脚本执行权限. 然后使用
+
+```bash
+tail -f test.log
+```
+
+来查看任务执行情况.
 
 ### 案例2:每周1-5的18:30,执行自定义脚本task02.sh
 ```vim
