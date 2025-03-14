@@ -3,7 +3,7 @@
 ## 上传项目到服务器
 
 ```powershell
-scp -r /path/to/Project/TestCrontab YOUR_HOST:/root/workspace/Projects/
+scp -r /path/to/Project/TestCrontab YOUR_HOST:/root/workspace/Projects/huxo
 ```
 
 ## 安装
@@ -11,7 +11,7 @@ scp -r /path/to/Project/TestCrontab YOUR_HOST:/root/workspace/Projects/
 首先进入项目目录
 
 ```bash
-cd /root/workspace/Projects/TestCrontab
+cd /root/workspace/Projects/huxo/TestCrontab/
 ```
 
 然后使用以下命令安装
@@ -53,7 +53,7 @@ crontab -e
 ### 案例1:每分钟执行一次本项目下的脚本`main.sh`
 
 ```vim
-* * * * *  /root/workspace/Projects/TestCrontab/main.sh
+* * * * *  /root/workspace/Projects/huxo/TestCrontab/main.sh
 ```
 
 建议以此案例来测试`crontab`. 测试时使用
